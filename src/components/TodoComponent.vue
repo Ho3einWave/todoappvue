@@ -61,5 +61,6 @@ export default {
 
 .done {
   text-decoration: line-through;
+  color: rgb(127, 127, 127);
 }
 </style>

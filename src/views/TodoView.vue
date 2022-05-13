@@ -12,6 +12,7 @@
           @toggle-todo="toggleTodo"
         />
       </div>
+      <p class="time-show">{{ time }}</p>
     </div>
   </div>
 </template>
@@ -28,10 +29,16 @@ export default {
   data() {
     return {
       todos: null,
+      time: null,
     };
   },
   created() {
     this.todos = JSON.parse(localStorage.getItem("todos")) || [];
+    const vm = this;
+    function time() {
+      vm.time = new Date().toLocaleString("en-US").replace(", ", " - ");
+    }
+    setInterval(time, 1 * 1000);
   },
   methods: {
     addTodo(title) {
@@ -82,5 +89,14 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.time-show {
+  background-color: #0d6efd;
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 1rem;
+  padding: 0.2rem 0.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
 }
 </style>
