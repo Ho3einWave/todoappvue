@@ -1,4 +1,4 @@
-# A todo app writed in vue
+# A todo app written in vue
 
 ![This is an image](./assets/app.png)
 
