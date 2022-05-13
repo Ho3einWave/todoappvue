@@ -39,6 +39,7 @@ export default {
       vm.time = new Date().toLocaleString("en-US").replace(", ", " - ");
     }
     setInterval(time, 1 * 1000);
+    document.title = "Todo list APP";
   },
   methods: {
     addTodo(title) {
